@@ -22,14 +22,14 @@ const containerVariants = {
       duration: 0.5,
       type: "spring",
     },
-    width: "12rem",
+    width: "14rem",
   },
 };
 
 const iconStyles =
   `min-w-7 w-7 min-h-7 h-7 text-zinc-100 transition-transform duration-100  hover:scale-110`;
 
-export const Sidebar = () => {
+export const McSidebar = () => {
   const location = useLocation();
 
   const navigate = useNavigate();
