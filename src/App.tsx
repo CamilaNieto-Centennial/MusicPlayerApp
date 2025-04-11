@@ -1,12 +1,30 @@
+import { BrowserRouter, Navigate, } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from "./routes/Home.tsx";
+import Genres from "./routes/Genres.tsx";
+import Albums from "./routes/Albums.tsx";
+import Artists from "./routes/Artists.tsx";
+import Favourites from "./routes/Favourites.tsx";
 import "./index.css";
-import { Button } from '@nextui-org/react'
+import Root from "./routes/root.tsx";
 
 function App() {
   return (
-    <div className="h-screen flex gap-3 items-center justify-center">
-      <h1 className="text-4xl font-bold">🎵 Music Player App</h1>
-      <Button color="danger">Button</Button>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes location={location} >
+          <Route element={<Root />} path="/" >
+            <Route element={<Navigate to="/home" />} index />
+            <Route element={<Home />} path="/home" />
+            <Route element={<Genres />} path="genres" />
+            <Route element={<Albums />} path="/albums" />
+            <Route element={<Artists />} path="/artists" />
+            <Route element={<Favourites />} path="/favourites" />
+          </Route>
+          {/* <Route element={<Error404 />} path="*" /> */}
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

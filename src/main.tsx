@@ -6,7 +6,7 @@ import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <NextUIProvider className="dark text-foreground bg-background">
+    <NextUIProvider className="dark text-foreground font-poppins bg-zinc-950">
       <App />
     </NextUIProvider>
   </React.StrictMode>,
