@@ -10,6 +10,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide
   const itemsPerSlide = 7; // Number of items per slide
+  const [fade, setFade] = useState(false);
 
   const maxSlide = albums.length - itemsPerSlide
 
@@ -31,11 +32,23 @@ export default function Home() {
 
   // Next and Previous buttons to control the slider
   const handlePrev = () => {
-    setCurrentSlide(prev => (prev === 0 ? 0 : prev - 1)); // Go back by one item
+    if (currentSlide > 0) {
+      setFade(true);
+      setTimeout(() => {
+        setCurrentSlide(prev => Math.max(prev - itemsPerSlide, 0));
+        setFade(false);
+      }, 150);
+    }
   };
 
   const handleNext = () => {
-    setCurrentSlide((prev) => (prev >= maxSlide ? prev : prev + 1))
+    if (currentSlide < maxSlide) {
+      setFade(true);
+      setTimeout(() => {
+        setCurrentSlide(prev => Math.min(prev + itemsPerSlide, maxSlide));
+        setFade(false);
+      }, 150);
+    }
   }
 
   return (
@@ -70,7 +83,7 @@ export default function Home() {
                   ))}
                 </>
                 :
-                <>
+                <div className={`flex gap-4 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>
                   {
                     albums.slice(currentSlide, currentSlide + itemsPerSlide).map((album) => (
                       <div
@@ -81,7 +94,7 @@ export default function Home() {
                       </div>
                     ))
                   }
-                </>
+                </div>
               }
             </div>
           </div>
