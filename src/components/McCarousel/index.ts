@@ -1,0 +1,1 @@
+export { McCarousel } from './McCarousel'

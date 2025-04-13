@@ -1,7 +1,11 @@
-// src/types/spotify.d.ts
-export interface SpotifyAlbumType {
+export interface BaseArtist {
+  id: string;
+  name: string;
+  images?: { url: string }[]; // Add this
+}
+export interface BaseCardData {
   id: string;
   name: string;
   images: { url: string }[];
-  artists: { name: string }[];
+  artists: BaseArtist[]
 }

@@ -1,1 +1,1 @@
-export { McCard } from './McCard'
+export { McCardRectangle, McCardRounded } from './McCard'
