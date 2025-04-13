@@ -3,7 +3,7 @@ import { Button, Skeleton } from '@nextui-org/react'
 import { getAccessToken, fetchNewAlbumsReleases } from '../api/spotify'
 import { SpotifyAlbumType } from '../types/spotify'
 import { McCard } from '../components'
-import { MdPlayArrow } from 'react-icons/md'
+import { MdArrowBackIos, MdArrowForwardIos, MdPlayArrow } from 'react-icons/md'
 
 export default function Home() {
   const [albums, setAlbums] = useState<SpotifyAlbumType[]>([]);
@@ -100,28 +100,21 @@ export default function Home() {
           </div>
 
           {/* Previous Button */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 px-3 z-10">
-            <Button
-              size="sm"
-              variant="flat"
-              isIconOnly
+          <div className="absolute top-[40%] left-0 transform -translate-y-1/2 px-2 z-10">
+            <div
               onClick={handlePrev}
-              className="bg-black/40 text-white border-none hover:bg-black/60 transition-all duration-300"
-            >
-              <MdPlayArrow />
-            </Button>
+              className="bg-zinc-900 p-2 rounded-full shadow-md transform scale-95 hover:scale-100 hover:bg-zinc-800 transition-transform duration-300 ease-in-out">
+              <MdArrowBackIos className="pl-[5px]" size="24" />
+            </div>
           </div>
 
           {/* Next Button */}
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 px-3 z-10">
-            <Button
-              size="sm"
-              variant="flat"
-              isIconOnly
+          <div className="absolute top-[40%] right-0 transform -translate-y-1/2 px-2 z-10">
+            <div
               onClick={handleNext}
-              className="bg-black/40 text-white border-none hover:bg-black/60 transition-all duration-300"
-            ><MdPlayArrow />
-            </Button>
+              className="bg-zinc-900 p-2 rounded-full shadow-md transform scale-95 hover:scale-100 hover:bg-zinc-800 transition-transform duration-300 ease-in-out">
+              <MdArrowForwardIos className="pl-[5px]" size="24" />
+            </div>
           </div>
 
         </div>
