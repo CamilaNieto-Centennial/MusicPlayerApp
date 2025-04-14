@@ -6,6 +6,7 @@ type McCarouselType<T> = {
   title: string;
   items: T[];
   isLoading: boolean;
+  isSmall?: boolean;
   renderItem: (item: T, index: number) => React.ReactNode;
   itemsPerSlide?: number;
 };
@@ -14,6 +15,7 @@ export const McCarousel = <T,>({
   title,
   items,
   isLoading,
+  isSmall,
   renderItem,
   itemsPerSlide = 7
 }: McCarouselType<T>) => {
@@ -65,7 +67,7 @@ export const McCarousel = <T,>({
                   </Skeleton>
                 </div>
               ))
-              : <div className={`${itemsPerSlide === 7 ? "gap-4" : itemsPerSlide === 8 ? "gap-12" : ""} flex transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>
+              : <div className={`${itemsPerSlide === 7 ? "gap-4" : itemsPerSlide === 8 ? "gap-12" : itemsPerSlide === 9 ? "gap-2" : ""} flex transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>
                 {
                   items.slice(currentSlide, currentSlide + itemsPerSlide).map((item, id) => (
                     <div key={id} className="flex justify-center">
@@ -78,7 +80,7 @@ export const McCarousel = <T,>({
         </div>
 
         {/* Prev Button */}
-        <div className="absolute top-[40%] left-0 transform -translate-y-1/2 px-2 z-10">
+        <div className={`absolute top-[40%] left-0 transform -translate-y-1/2 px-2 z-10 ${isSmall ? "top-[50%]" : "top-[40%]"}`}>
           <div
             onClick={handlePrev}
             className="bg-zinc-900 p-2 rounded-full shadow-md transform scale-95 hover:scale-100 hover:bg-zinc-800 transition-transform duration-300 ease-in-out cursor-pointer"
@@ -88,7 +90,7 @@ export const McCarousel = <T,>({
         </div>
 
         {/* Next Button */}
-        <div className="absolute top-[40%] right-0 transform -translate-y-1/2 px-2 z-10">
+        <div className={`absolute top-[40%] right-0 transform -translate-y-1/2 px-2 z-10 ${isSmall ? "top-[50%]" : "top-[40%]"}`}>
           <div
             onClick={handleNext}
             className="bg-zinc-900 p-2 rounded-full shadow-md transform scale-95 hover:scale-100 hover:bg-zinc-800 transition-transform duration-300 ease-in-out cursor-pointer"

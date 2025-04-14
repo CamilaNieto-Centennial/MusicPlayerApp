@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { getAccessToken, fetchNewAlbumsReleases, fetchPopularArtists } from '../api/spotify'
-import { BaseArtist, BaseCardData } from '../types/spotify'
-import { McCardRectangle, McCardRounded, McCarousel } from '../components'
+import { BaseArtistType, BaseCardDataType } from '../types/spotify'
+import { McCardColor, McCardRectangle, McCardRounded, McCarousel } from '../components'
 import { podcastData } from '../constants/podcasts';
+import { genres } from '../constants/genres';
 
 export default function Home() {
-  const [newAlbums, setNewAlbums] = useState<BaseCardData[]>([]);
-  const [popularArtists, setPopularArtists] = useState<BaseArtist[]>([]);
+  const [newAlbums, setNewAlbums] = useState<BaseCardDataType[]>([]);
+  const [popularArtists, setPopularArtists] = useState<BaseArtistType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   //const itemsPerSlide = 7; // Number of items per slide (carousel)
 
@@ -43,17 +44,25 @@ export default function Home() {
         renderItem={(album) => <McCardRectangle item={album} />}
       />
       <McCarousel
-        title="Popular Playlists"
-        items={newAlbums}
-        isLoading={isLoading}
-        renderItem={(album) => <McCardRectangle item={album} />}
-      />
-      <McCarousel
         title="Popular Artists"
         items={popularArtists}
         isLoading={isLoading}
         itemsPerSlide={8}
-        renderItem={(album) => <McCardRounded item={album} />}
+        renderItem={(artist) => <McCardRounded item={artist} />}
+      />
+      <McCarousel
+        title="Genres"
+        items={genres}
+        isLoading={isLoading}
+        itemsPerSlide={7}
+        isSmall
+        renderItem={(genre) => <McCardColor item={genre} />}
+      />
+      <McCarousel
+        title="Popular Playlists"
+        items={newAlbums}
+        isLoading={isLoading}
+        renderItem={(album) => <McCardRectangle item={album} />}
       />
       <McCarousel
         title="New Releases"
@@ -65,7 +74,7 @@ export default function Home() {
         title="Popular Podcasts"
         items={podcastData}
         isLoading={isLoading}
-        renderItem={(album) => <McCardRectangle item={album} />}
+        renderItem={(podcast) => <McCardRectangle item={podcast} />}
       />
 
       {/* <h1 className="text-3xl font-bold mb-4">Welcome to <span className='text-[#07c8f9]'>Outlier</span> Music <span className='text-[#09a6f3]'>Outlier</span> 🎧 <span className='text-[#0a85ed]'>Outlier</span>  🎧 <span className='text-[#0c63e7]'>Outlier</span>  🎧 <span className='text-[#0d41e1]'>Outlier</span></h1>

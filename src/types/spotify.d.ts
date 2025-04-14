@@ -1,11 +1,11 @@
-export interface BaseArtist {
+export interface BaseArtistType {
   id: string;
   name: string;
   images?: { url: string }[]; // Add this
 }
-export interface BaseCardData {
+export interface BaseCardDataType {
   id: string;
   name: string;
   images: { url: string }[];
-  artists: BaseArtist[]
+  artists: BaseArtistType[]
 }

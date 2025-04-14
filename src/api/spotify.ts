@@ -1,4 +1,4 @@
-import { BaseArtist, BaseCardData } from "../types/spotify";
+import { BaseArtistType, BaseCardDataType } from "../types/spotify";
 
 const authHeader = btoa(`${import.meta.env.VITE_SPOTIFY_CLIENT_ID}:${import.meta.env.VITE_SPOTIFY_CLIENT_SECRET}`);
 
@@ -31,14 +31,14 @@ export const fetchNewAlbumsReleases = async (accessToken: string) => {
   return data.albums.items;
 };
 
-// export const fetchPopularArtists = async (accessToken: string): Promise<BaseArtist[]> => {
-//   const newAlbums: BaseCardData[] = await fetchNewAlbumsReleases(accessToken);
+// export const fetchPopularArtists = async (accessToken: string): Promise<BaseArtistType[]> => {
+//   const newAlbums: BaseCardDataType[] = await fetchNewAlbumsReleases(accessToken);
 
-//   const artists: BaseArtist[] = [];
+//   const artists: BaseArtistType[] = [];
 
-//   newAlbums.forEach((album: BaseCardData) => {
-//     album.artists.forEach((artist: BaseArtist) => {
-//       // Ensure the artist has an id (as required by BaseArtist)
+//   newAlbums.forEach((album: BaseCardDataType) => {
+//     album.artists.forEach((artist: BaseArtistType) => {
+//       // Ensure the artist has an id (as required by BaseArtistType)
 //       if (artist.id && artist.name) {
 //         artists.push(artist);
 //       }
@@ -47,7 +47,7 @@ export const fetchNewAlbumsReleases = async (accessToken: string) => {
 
 //   // Deduplicate artists by id
 //   const uniqueArtists = Object.values(
-//     artists.reduce((acc: Record<string, BaseArtist>, artist: BaseArtist) => {
+//     artists.reduce((acc: Record<string, BaseArtistType>, artist: BaseArtistType) => {
 //       acc[artist.id] = artist;
 //       return acc;
 //     }, {})
@@ -58,8 +58,8 @@ export const fetchNewAlbumsReleases = async (accessToken: string) => {
 // };
 
 
-export const fetchPopularArtists = async (accessToken: string): Promise<BaseArtist[]> => {
-  const newAlbums: BaseCardData[] = await fetchNewAlbumsReleases(accessToken);
+export const fetchPopularArtists = async (accessToken: string): Promise<BaseArtistType[]> => {
+  const newAlbums: BaseCardDataType[] = await fetchNewAlbumsReleases(accessToken);
   const artistIds = new Set<string>();
 
   newAlbums.forEach(album => {
