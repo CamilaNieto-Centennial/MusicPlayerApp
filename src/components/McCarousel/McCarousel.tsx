@@ -1,13 +1,15 @@
 import { Skeleton } from '@nextui-org/react';
 import { useState } from 'react';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 type McCarouselType<T> = {
   title: string;
   items: T[];
   isLoading: boolean;
-  isSmall?: boolean;
   renderItem: (item: T, index: number) => React.ReactNode;
+  url: string;
+  isSmall?: boolean;
   itemsPerSlide?: number;
 };
 
@@ -15,13 +17,19 @@ export const McCarousel = <T,>({
   title,
   items,
   isLoading,
-  isSmall,
   renderItem,
+  url,
+  isSmall,
   itemsPerSlide = 7
 }: McCarouselType<T>) => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [fade, setFade] = useState(false);
   const maxSlide = Math.max(items.length - itemsPerSlide, 0);
+
+  const handleNavigation = (route: string) => {
+    navigate(route);
+  };
 
   // Next and Previous buttons to control the slider
   const handlePrev = () => {
@@ -48,16 +56,16 @@ export const McCarousel = <T,>({
     <div className="flex flex-col gap-4">
       <div className="flex flex-row justify-between items-center">
         <h3 className="text-xl font-bold">{title}</h3>
-        <p className="font-bold hover:underline cursor-pointer">Show all</p>
+        <p onClick={() => handleNavigation(url)} className="font-bold hover:underline cursor-pointer">Show all</p>
       </div>
       <div className="relative w-full">
         <div className="overflow-hidden">
           <div className="flex gap-4">
             {isLoading
               ? Array.from({ length: itemsPerSlide }).map((_, i) => (
-                <div key={i} className="flex flex-col gap-3 w-[240px] shrink-0">
+                <div key={i} className="flex flex-col gap-3 w-fit shrink-0">
                   <Skeleton className="rounded-md">
-                    <div className="w-[240px] h-[140px] rounded-md bg-default-300" />
+                    <img className="w-[240px] h-[140px] rounded-md bg-default-300" />
                   </Skeleton>
                   <Skeleton className="w-4/5 rounded-lg">
                     <div className="h-3 w-4/5 rounded-lg bg-default-200" />

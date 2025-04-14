@@ -1,7 +1,7 @@
-import React from 'react'
-
 export default function Live() {
   return (
-    <div>Live</div>
+    <main className="flex flex-col gap-4 p-8 overflow-y-auto">
+      Live
+    </main>
   )
 }

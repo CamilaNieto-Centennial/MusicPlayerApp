@@ -18,7 +18,7 @@ export const McNavbar = () => {
       <div className="flex flex-row justify-between items-center gap-6 w-full px-8 py-4">
         <div className="flex flex-row gap-4">
           <p onClick={() => handleNavigation("/music")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">MUSIC</p>
-          <p onClick={() => handleNavigation("/podcast")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">PODCAST</p>
+          <p onClick={() => handleNavigation("/podcasts")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">PODCAST</p>
           <p onClick={() => handleNavigation("/live")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500  hover:font-semibold hover:scale-105 transition-all duration-150">LIVE</p>
         </div>
         <McSearchbar />
@@ -26,6 +26,7 @@ export const McNavbar = () => {
           <div
             onMouseEnter={() => setHoveredIcon("fav")}
             onMouseLeave={() => setHoveredIcon(null)}
+            onClick={() => handleNavigation("/favourites")}
             className="transition-transform duration-100 hover:scale-110 cursor-pointer"
           >
             {hoveredIcon === "fav" ? (

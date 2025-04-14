@@ -3,7 +3,7 @@ import { McSidebar, McNavbar } from "../components"
 
 export default function Root() {
   return (
-    <div className="flex h-screen overflow-x-hidden">
+    <div className="flex h-screen overflow-x-hidden overflow-y-hidden">
       <McSidebar />
       <div className="flex flex-col w-full">
         <McNavbar />

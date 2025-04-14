@@ -20,7 +20,7 @@ function App() {
             <Route element={<Navigate to="/home" />} index />
             <Route element={<Home />} path="/home" />
             <Route element={<Music />} path="/music" />
-            <Route element={<Podcast />} path="/podcast" />
+            <Route element={<Podcast />} path="/podcasts" />
             <Route element={<Live />} path="/live" />
             <Route element={<Genres />} path="genres" />
             <Route element={<Albums />} path="/albums" />

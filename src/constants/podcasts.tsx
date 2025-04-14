@@ -1,4 +1,4 @@
-export const podcastData = [
+export const podcasts = [
   {
     id: 'podcast1',
     name: 'The Future of Music',
