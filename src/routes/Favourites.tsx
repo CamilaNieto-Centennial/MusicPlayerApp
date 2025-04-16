@@ -1,4 +1,4 @@
-import { Button, Skeleton, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
+import { Button, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
 import React from "react";
 import { MdFavorite, MdMoreHoriz, MdOutlineVolumeDown, MdOutlineVolumeMute, MdOutlineVolumeUp, MdPause, MdPlayArrow, MdRepeat, MdShuffle, MdSkipNext, MdSkipPrevious } from "react-icons/md";
 
@@ -31,12 +31,12 @@ export const columns: ColumnType[] = [
 export const songs: Song[] = [
   {
     id: 1,
-    title: "Shape of You",
-    album: "÷",
-    duration: "04:23",
-    avatar: "https://upload.wikimedia.org/wikipedia/pt/3/35/Ed_Sheeran_-_Shape_of_You.png",
-    artist: "Ed Sheeran",
-    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/33/76/1753618985497633-1753618985798051-1753618994958333.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250413%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250413T092937Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=bb3ddb57c90805cc903c4d9d7c9b07696dec5192bbea91a338dcd0d00cb63346", ///songs/stargazing.mp3
+    title: "STAY",
+    album: "STAY",
+    duration: "02:21",
+    avatar: "https://upload.wikimedia.org/wikipedia/pt/0/07/Stay_-_The_Kid_Laroi_e_Justin_Bieber.png",
+    artist: "Justin Bieber, The Kid Laroi",
+    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/56/80/1817891497468056-1817891497513179-1817891509457755.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250413%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250413T212142Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=58ad6d342fbefb5c0258cd4e34729796c7522e843cf44718f0bdf761c18a1905",
   },
   {
     id: 2,
@@ -45,7 +45,7 @@ export const songs: Song[] = [
     duration: "03:47",
     avatar: "https://upload.wikimedia.org/wikipedia/pt/5/5a/Capa_do_single_Rolling_in_The_Deep.jpg",
     artist: "Adele",
-    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/75/54/1824434213845475-1824434213917976-1824434218917398.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250414%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250414T232034Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=692e80348195eba05abf240c77d00f7f79caff788d55cb2f7d63d886f14f70ea", ///songs/stargazing.mp3
+    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/75/54/1824434213845475-1824434213917976-1824434218917398.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250414%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250414T232034Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=692e80348195eba05abf240c77d00f7f79caff788d55cb2f7d63d886f14f70ea",
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ export const songs: Song[] = [
     duration: "02:52",
     avatar: "https://upload.wikimedia.org/wikipedia/en/f/f2/Myles_Smith_-_Stargazing.jpg",
     artist: "Myles Smith",
-    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/92/26/1815996652602692-1815996652728917-1815996724969021.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250414%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250414T085353Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=23f62334191f538b48b71ceb9302a324f64fdbd817a866979bebd38b7ced3ed5", ///songs/stargazing.mp3
+    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/92/26/1815996652602692-1815996652728917-1815996724969021.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250414%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250414T085353Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=23f62334191f538b48b71ceb9302a324f64fdbd817a866979bebd38b7ced3ed5",
   },
   {
     id: 4,
@@ -103,12 +103,12 @@ export const songs: Song[] = [
   },
   {
     id: 9,
-    title: "STAY",
-    album: "STAY",
-    duration: "02:21",
-    avatar: "https://upload.wikimedia.org/wikipedia/pt/0/07/Stay_-_The_Kid_Laroi_e_Justin_Bieber.png",
-    artist: "Justin Bieber, The Kid Laroi",
-    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/56/80/1817891497468056-1817891497513179-1817891509457755.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250413%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250413T212142Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=58ad6d342fbefb5c0258cd4e34729796c7522e843cf44718f0bdf761c18a1905",
+    title: "Shape of You",
+    album: "÷",
+    duration: "04:23",
+    avatar: "https://upload.wikimedia.org/wikipedia/pt/3/35/Ed_Sheeran_-_Shape_of_You.png",
+    artist: "Ed Sheeran",
+    url: "https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/33/76/1753618985497633-1753618985798051-1753618994958333.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250413%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250413T092937Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=bb3ddb57c90805cc903c4d9d7c9b07696dec5192bbea91a338dcd0d00cb63346",
   },
   {
     id: 10,
@@ -255,142 +255,157 @@ export default function Favourites() {
 
 
   return (
-    <div className="flex flex-col h-full">
-      <main className="flex flex-col gap-4 p-8 overflow-y-auto h-[80.8%]">
-        <div className="flex flex-row gap-6 items-end">
-          <Skeleton className="rounded-md">
-            <img className="w-[280px] h-[280px] rounded-md bg-default-300" />
-          </Skeleton>
-          <div className="flex flex-col gap-6 w-full mb-2">
-            <div className="flex flex-col gap-1">
-              <h1 className="text-sm font-semibold text-primary500">PRIVATE PLAYLIST</h1>
-              <h1 className="text-5xl font-bold">Favourites</h1>
-              <h1 className="text-base font-medium text-zinc-600">Name, Name, Name and more</h1>
+    <main className="w-full relative h-full overflow-y-hidden">
+      {/* Background Gradient */}
+      <div
+        className="absolute inset-0 z-0 h-[380px]"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(16,41,45,0.95), rgba(16,41,45,0.4))`,
+          backgroundSize: 'contain',
+          backgroundPosition: '80% top',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div className="relative h-full">
+        <div className="relative w-full overflow-y-auto h-[88.5%]">
+          <div className="flex flex-row gap-6 pt-8 px-8 items-end">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/0/07/Stay_-_The_Kid_Laroi_e_Justin_Bieber.png" className="w-[280px] h-[280px] rounded-md bg-default-300" />
+            <div className="flex flex-col gap-6 w-full mb-4">
+              <div className="flex flex-col gap-1">
+                <h1 className="text-sm font-semibold text-primary500">PRIVATE PLAYLIST</h1>
+                <h1 className="text-5xl font-bold">Favourites</h1>
+                <h1 className="text-base font-medium text-zinc-600">Justin Bieber, The Kid Laroi, Adele and more</h1>
+              </div>
+              <Button
+                startContent={<MdShuffle className="w-5 h-5" />}
+                className="w-fit bg-primary600"
+                size="md"
+                radius="full"
+                color="danger"
+                onPress={() => { handleNext(); setIsShuffling(true) }}>
+                <p className="text-base font-semibold">Shuffle</p>
+              </Button>
             </div>
-            <Button
-              startContent={<MdShuffle className="w-5 h-5" />}
-              className="w-fit bg-primary600"
-              size="md"
-              radius="full"
-              color="danger"
-              onPress={() => { handleNext(); setIsShuffling(true) }}>
-              <p className="text-base font-semibold">Shuffle</p>
-            </Button>
+          </div>
+          <div
+            className=" z-10 flex flex-col gap-12 pt-16 p-8 pb-10"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(9,9,11,0.005) 0%, rgba(9,9,11,0.7) 5%, rgba(9,9,11,1) 9%)',
+            }}
+          >
+            <Table
+              removeWrapper
+              selectionMode="single"
+              aria-label="Favourites Songs"
+              classNames={classNames}
+              onRowAction={(key) => {
+                const songIndex = songs.findIndex((song) => song.id === Number(key));
+                if (songIndex !== -1) playSongAtIndex(songIndex);
+              }}>
+              <TableHeader columns={columns} className="bg-transparent">
+                {(column) => (
+                  <TableColumn
+                    style={{
+                      width: column.width,
+                      minWidth: column.minWidth,
+                      maxWidth: column.maxWidth,
+                    }}
+                    key={column.uid}
+                    align={column.uid === "actions" ? "end" : "start"}>
+                    {column.name}
+                  </TableColumn>
+                )}
+              </TableHeader>
+              <TableBody items={songs}>
+                {(item) => (
+                  <TableRow key={item.id} className="group">
+                    {(columnKey) => <TableCell>{renderCell(item, columnKey as ColumnKey)}</TableCell>}
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
           </div>
         </div>
-        <Table
-          removeWrapper
-          selectionMode="single"
-          aria-label="Favourites Songs"
-          classNames={classNames}
-          onRowAction={(key) => {
-            const songIndex = songs.findIndex((song) => song.id === Number(key));
-            if (songIndex !== -1) playSongAtIndex(songIndex);
-          }}>
-          <TableHeader columns={columns} className="bg-transparent">
-            {(column) => (
-              <TableColumn
-                style={{
-                  width: column.width,
-                  minWidth: column.minWidth,
-                  maxWidth: column.maxWidth,
+        <footer className="flex flex-row justify-between w-full py-3 px-4 bg-zinc-800">
+          <div className="flex flex-row gap-3 w-1/5">
+            <img
+              alt={songs[currentSongIndex].title}
+              className="w-[4.6rem] h-[4.6rem] rounded-md"
+              src={songs[currentSongIndex].avatar}
+            />
+            <div className="flex flex-col gap-2 justify-center">
+              <p className="text-[0.95rem] leading-none font-medium">{songs[currentSongIndex].title}</p>
+              <p className="text-[0.8rem] leading-none font-semibold text-zinc-500">{songs[currentSongIndex].artist}</p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 w-2/4 items-center">
+            <div className="relative flex items-center gap-4">
+              <div onClick={() => setIsShuffling(!isShuffling)} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
+                <MdShuffle className={`w-6 h-6 ${isShuffling ? "text-pink-500" : "text-zinc-100"}`} />
+              </div>
+              <div onClick={handlePrev} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
+                <MdSkipPrevious className="text-zinc-100 w-6 h-6" />
+              </div>
+              <div onClick={togglePlayPause} className="p-2 bg-white rounded-full shadow-md transform hover:scale-105 cursor-pointer transition-transform duration-100 ease-in-out">
+                {isPlaying ? (
+                  <MdPause className="text-black w-7 h-7" /> // change to MdPause if available
+                ) : (
+                  <MdPlayArrow className="text-black w-7 h-7" />
+                )}
+              </div>
+              <div onClick={handleNext} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
+                <MdSkipNext className="text-zinc-100 w-6 h-6" />
+              </div>
+              <div onClick={() => setIsRepeating(!isRepeating)} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
+                <MdRepeat className={`w-6 h-6 ${isRepeating ? "text-pink-500" : "text-zinc-100"}`} />
+              </div>
+            </div>
+            <div className="flex flex-row gap-2 items-center w-full">
+              <p className="text-sm font-medium text-zinc-300">{formatTime(currentTime)}</p>
+              <input
+                type="range"
+                min={0}
+                max={duration}
+                value={currentTime}
+                onChange={(e) => {
+                  const time = parseFloat(e.target.value);
+                  setCurrentTime(time);
+                  if (audioRef.current) audioRef.current.currentTime = time;
                 }}
-                key={column.uid}
-                align={column.uid === "actions" ? "end" : "start"}>
-                {column.name}
-              </TableColumn>
-            )}
-          </TableHeader>
-          <TableBody items={songs}>
-            {(item) => (
-              <TableRow key={item.id} className="group">
-                {(columnKey) => <TableCell>{renderCell(item, columnKey as ColumnKey)}</TableCell>}
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-
-
-      </main>
-      <footer className="flex flex-row justify-between w-full py-3 px-4 bg-zinc-800">
-        <div className="flex flex-row gap-3 w-1/5">
-          <img
-            alt={songs[currentSongIndex].title}
-            className="w-[4.6rem] h-[4.6rem] rounded-md"
-            src={songs[currentSongIndex].avatar}
-          />
-          <div className="flex flex-col gap-2 justify-center">
-            <p className="text-[0.95rem] leading-none font-medium">{songs[currentSongIndex].title}</p>
-            <p className="text-[0.8rem] leading-none font-semibold text-zinc-500">{songs[currentSongIndex].artist}</p>
+                className="w-full accent-primary500"
+              />
+              <p className="text-sm font-medium text-zinc-300">{formatTime(duration)}</p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-2 w-2/4 items-center">
-          <div className="relative flex items-center gap-4">
-            <div onClick={() => setIsShuffling(!isShuffling)} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
-              <MdShuffle className={`w-6 h-6 ${isShuffling ? "text-pink-500" : "text-zinc-100"}`} />
+          <div className="relative flex items-center w-1/5 gap-3 justify-end">
+            <div className="transition-transform duration-100 hover:scale-110 cursor-pointer">
+              <MdFavorite className="text-danger-500 w-6 h-6" />
             </div>
-            <div onClick={handlePrev} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
-              <MdSkipPrevious className="text-zinc-100 w-6 h-6" />
-            </div>
-            <div onClick={togglePlayPause} className="p-2 bg-white rounded-full shadow-md transform hover:scale-105 cursor-pointer transition-transform duration-100 ease-in-out">
-              {isPlaying ? (
-                <MdPause className="text-black w-7 h-7" /> // change to MdPause if available
+            <div className="transition-transform duration-100 hover:scale-110 cursor-pointer">
+              {volume === 0 ? (
+                <MdOutlineVolumeMute className="text-zinc-100 w-7 h-7" />
+              ) : volume < 1 ? (
+                <MdOutlineVolumeDown className="text-zinc-100 w-7 h-7" />
               ) : (
-                <MdPlayArrow className="text-black w-7 h-7" />
+                <MdOutlineVolumeUp className="text-zinc-100 w-7 h-7" />
               )}
             </div>
-            <div onClick={handleNext} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
-              <MdSkipNext className="text-zinc-100 w-6 h-6" />
-            </div>
-            <div onClick={() => setIsRepeating(!isRepeating)} className="transition-transform duration-100 hover:scale-110 cursor-pointer">
-              <MdRepeat className={`w-6 h-6 ${isRepeating ? "text-pink-500" : "text-zinc-100"}`} />
-            </div>
-          </div>
-          <div className="flex flex-row gap-2 items-center w-full">
-            <p className="text-sm font-medium text-zinc-300">{formatTime(currentTime)}</p>
             <input
               type="range"
               min={0}
-              max={duration}
-              value={currentTime}
+              max={1}
+              step={0.01}
+              value={volume}
               onChange={(e) => {
-                const time = parseFloat(e.target.value);
-                setCurrentTime(time);
-                if (audioRef.current) audioRef.current.currentTime = time;
+                const vol = parseFloat(e.target.value);
+                setVolume(vol);
+                if (audioRef.current) audioRef.current.volume = vol;
               }}
-              className="w-full accent-primary500"
+              className="w-24 accent-primary500"
             />
-            <p className="text-sm font-medium text-zinc-300">{formatTime(duration)}</p>
           </div>
-        </div>
-        <div className="relative flex items-center w-1/5 gap-3 justify-end">
-          <div className="transition-transform duration-100 hover:scale-110 cursor-pointer">
-            <MdFavorite className="text-danger-500 w-6 h-6" />
-          </div>
-          <div className="transition-transform duration-100 hover:scale-110 cursor-pointer">
-            {volume === 0 ? (
-              <MdOutlineVolumeMute className="text-zinc-100 w-7 h-7" />
-            ) : volume < 1 ? (
-              <MdOutlineVolumeDown className="text-zinc-100 w-7 h-7" />
-            ) : (
-              <MdOutlineVolumeUp className="text-zinc-100 w-7 h-7" />
-            )}
-          </div>
-          <input
-            type="range"
-            min={0}
-            max={1}
-            step={0.01}
-            value={volume}
-            onChange={(e) => {
-              const vol = parseFloat(e.target.value);
-              setVolume(vol);
-              if (audioRef.current) audioRef.current.volume = vol;
-            }}
-            className="w-24 accent-primary500"
-          />
-        </div>
-      </footer>
+        </footer>
+      </div>
       <audio
         ref={audioRef}
         src={songs[currentSongIndex].url}
@@ -402,6 +417,6 @@ export default function Favourites() {
         }}
         onEnded={handleEnded}
       />
-    </div>
+    </main >
   )
 }
