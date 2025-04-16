@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BaseCardDataType } from '../types/spotify';
-import { fetchNewAlbumsReleases, getAccessToken } from '../api/spotify';
+// import { fetchNewAlbumsReleases, getAccessToken } from '../api/spotify';
 import { McCardRectangle, McCarousel } from '../components';
 import { Skeleton } from '@nextui-org/react';
 import { topAlbums } from '../constants/albums';

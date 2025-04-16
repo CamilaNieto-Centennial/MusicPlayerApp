@@ -29,7 +29,7 @@ export const McCarousel = <T,>({
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [fade, setFade] = useState(false);
-  const wasItemsPerSlideProvided = typeof propItemsPerSlide === 'number';
+  // const wasItemsPerSlideProvided = typeof propItemsPerSlide === 'number';
   const [itemsPerSlide, setItemsPerSlide] = useState(propItemsPerSlide ?? ((isRounded || isColor) ? 8 : 7));
   const maxSlide = Math.max(items.length - itemsPerSlide, 0);
 

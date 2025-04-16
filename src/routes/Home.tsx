@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getAccessToken, fetchNewAlbumsReleases, fetchPopularArtists } from '../api/spotify'
+// import { getAccessToken, fetchNewAlbumsReleases, fetchPopularArtists } from '../api/spotify'
 import { BaseArtistType, BaseCardDataType } from '../types/spotify'
 import { McCardColor, McCardRectangle, McCardRounded, McCarousel } from '../components'
 import { podcasts } from '../constants/podcasts';

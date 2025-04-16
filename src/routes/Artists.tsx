@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { McCardRectangle, McCardRounded, McCarousel } from '../components';
+import { McCardRounded, McCarousel } from '../components';
 import { BaseArtistType } from '../types/spotify';
-import { fetchPopularArtists, getAccessToken } from '../api/spotify';
+// import { fetchPopularArtists, getAccessToken } from '../api/spotify';
 import { Skeleton } from '@nextui-org/react';
 import { trendingArtists } from '../constants/artists';
 
