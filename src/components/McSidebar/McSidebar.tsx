@@ -1,4 +1,4 @@
-import { MdOutlineHome, MdOutlineCategory, MdQueueMusic, MdPersonOutline, MdFavoriteBorder, MdLogout } from "react-icons/md"
+import { MdOutlineHome, MdOutlineCategory, MdQueueMusic, MdPersonOutline, MdFavoriteBorder, MdLogout, MdLibraryMusic, MdGraphicEq, MdLiveTv } from "react-icons/md"
 import { useAnimationControls, motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import logoName from "../../assets/logo/white_name.png";
@@ -7,6 +7,10 @@ import icon from "../../assets/logo/white_icon.png";
 import { useEffect, useState } from "react";
 import { Button } from "@nextui-org/react"
 import { McSearchbar } from "../McNavbar/McSearchbar/McSearchbar";
+
+interface McSidebarType {
+  className?: string;
+}
 
 const containerVariants = {
   close: {
@@ -30,7 +34,7 @@ const containerVariants = {
 const iconStyles =
   `min-w-7 w-7 min-h-7 h-7 text-zinc-100 transition-transform duration-100  hover:scale-110`;
 
-export const McSidebar = () => {
+export const McSidebar = ({ className }: McSidebarType) => {
   const location = useLocation();
 
   const navigate = useNavigate();
@@ -71,7 +75,7 @@ export const McSidebar = () => {
       )}
       <motion.aside
         animate={containerControls}
-        className={`h-screen bg-zinc-900 text-zinc-100 flex flex-col justify-between px-4 py-6
+        className={`h-screen bg-zinc-900 text-zinc-100 flex flex-col justify-between px-4 py-6 ${className}
         ${isTemporarilyFixed && window.innerWidth < 768 ? "fixed z-[100] top-0 left-0" : "relative"}
     ${isOpen && window.innerWidth < 768 ? "w-[14rem]" : ""}
       `}
@@ -164,7 +168,7 @@ export const McSidebar = () => {
                 size="lg"
                 radius="sm"
                 variant={location.pathname === "/music" ? "solid" : "light"}
-                startContent={<MdFavoriteBorder className={iconStyles} size={24} />}
+                startContent={<MdLibraryMusic className={iconStyles} size={24} />}
                 className={`${location.pathname === "/music" ? "bg-primary700" : ""} justify-start min-w-fit px-2`}
                 onPress={() => handleNavigation("/music")}
               >
@@ -176,7 +180,7 @@ export const McSidebar = () => {
                 size="lg"
                 radius="sm"
                 variant={location.pathname === "/podcasts" ? "solid" : "light"}
-                startContent={<MdFavoriteBorder className={iconStyles} size={24} />}
+                startContent={<MdGraphicEq className={iconStyles} size={24} />}
                 className={`${location.pathname === "/podcasts" ? "bg-primary700" : ""} justify-start min-w-fit px-2`}
                 onPress={() => handleNavigation("/podcasts")}
               >
@@ -188,7 +192,7 @@ export const McSidebar = () => {
                 size="lg"
                 radius="sm"
                 variant={location.pathname === "/live" ? "solid" : "light"}
-                startContent={<MdFavoriteBorder className={iconStyles} size={24} />}
+                startContent={<MdLiveTv className={iconStyles} size={24} />}
                 className={`${location.pathname === "/live" ? "bg-primary700" : ""} justify-start min-w-fit px-2`}
                 onPress={() => handleNavigation("/live")}
               >
@@ -205,6 +209,7 @@ export const McSidebar = () => {
           variant="light"
           startContent={<MdLogout className={iconStyles} size={24} />}
           className={`hover:!bg-danger800 justify-start min-w-fit px-2`}
+          onPress={() => handleNavigation("/")}
         >
           {isOpen && (
             <p className="text-zinc-100">Logout</p>

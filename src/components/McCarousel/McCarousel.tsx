@@ -72,7 +72,7 @@ export const McCarousel = <T,>({
         else if (width >= 950) setItemsPerSlide(5);
         else if (width >= 750) setItemsPerSlide(4);
         else if (width >= 600) setItemsPerSlide(3);
-        else if (width >= 450) setItemsPerSlide(2);
+        else if (width >= 370) setItemsPerSlide(2);
         else setItemsPerSlide(1);
       } else {
         if (width >= 1900) setItemsPerSlide(8);
@@ -81,7 +81,7 @@ export const McCarousel = <T,>({
         else if (width >= 1200) setItemsPerSlide(5);
         else if (width >= 900) setItemsPerSlide(4);
         else if (width >= 650) setItemsPerSlide(3);
-        else if (width >= 500) setItemsPerSlide(2);
+        else if (width >= 370) setItemsPerSlide(2);
         else setItemsPerSlide(1);
       }
     };

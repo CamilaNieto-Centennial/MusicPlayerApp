@@ -458,7 +458,7 @@ export default function Favourites() {
         </footer>
         {/* Mobile Footer */}
         <footer
-          className="md:hidden absolute bottom-0 left-0 z-50  items-center justify-between w-full px-4 py-3 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent"
+          className="md:hidden absolute bottom-0 left-0 z-40  items-center justify-between w-full px-4 py-3 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent"
           style={{
             backgroundImage: `linear-gradient(to right, ${averageColor}, ${darkenHexColor})`, // Apply average color here
           }}>

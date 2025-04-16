@@ -63,20 +63,20 @@ export default function Home() {
               backgroundRepeat: 'no-repeat',
             }}
           />
-          <div className="relative z-10 flex flex-col gap-4 md:gap-10 w-full pt-14 pb-10  md:pt-16 md:pb-14 lg:pt-20 lg:pb-16 px-8">
-            <h1 className="text-base font-semibold text-primary500">Trending New Hits</h1>
+          <div className="relative z-10 flex flex-col gap-3 sm:gap-4 md:gap-10 w-full pt-8 pb-0 sm:pb-10 sm:pt-14 md:pt-16 md:pb-14 lg:pt-20 lg:pb-16 px-8">
+            <h1 className="text-sm sm:text-base font-semibold text-primary500">Trending New Hits</h1>
             <div className="flex flex-col gap-5 md:gap-8 w-full mb-2 md:ml-4">
-              <div className="flex flex-col gap-2 md:gap-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Rolling in the Deep</h1>
+              <div className="flex flex-col gap-2 sm:gap-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Rolling in the Deep</h1>
                 <div className='flex flex-row gap-3 md:gap-4 items-center'>
-                  <p className="text-base md:text-lg font-semibold text-zinc-200">Adele</p>
-                  <p className="text-base md:text-base font-medium text-zinc-500">80 Million Plays</p>
+                  <p className="text-sm sm:text-base md:text-lg font-semibold text-zinc-200">Adele</p>
+                  <p className="text-sm sm:text-base md:text-base font-medium text-zinc-500">80 Million Plays</p>
                 </div>
               </div>
               <div className="flex flex-row gap-3">
                 <Button
                   //startContent={<MdShuffle className="w-5 h-5" />}
-                  className="w-fit bg-primary600 px-5 py-2 text-sm md:text-base md:px-6 md:py-4"
+                  className="w-fit bg-primary600 px-5 py-2 text-xs sm:text-base sm:px-6 sm:py-4"
                   radius="full"
                   color="danger">
                   <p className="text-base font-semibold">Listen Now</p>
