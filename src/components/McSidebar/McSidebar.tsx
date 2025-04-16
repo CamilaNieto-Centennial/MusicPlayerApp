@@ -106,10 +106,10 @@ export const McSidebar = ({ className }: McSidebarType) => {
             <Button
               size="lg"
               radius="sm"
-              variant={location.pathname === "/home" ? "solid" : "light"}
+              variant={location.pathname === "/" ? "solid" : "light"}
               startContent={<MdOutlineHome className={iconStyles} size={24} />}
-              className={`${location.pathname === "/home" ? "bg-primary700" : ""} justify-start min-w-fit px-2`}
-              onPress={() => handleNavigation("/home")}
+              className={`${location.pathname === "/" ? "bg-primary700" : ""} justify-start min-w-fit px-2`}
+              onPress={() => handleNavigation("/")}
             >
               {isOpen && (
                 <p className="text-zinc-100">Home</p>

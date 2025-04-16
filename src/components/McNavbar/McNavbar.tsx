@@ -94,7 +94,7 @@ export const McNavbar = () => {
             <McSearchbar className="w-fit" isSmall isShow={true} />
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-6">
-                <div onClick={() => handleNavigation("/home")} className="flex flex-row gap-4">
+                <div onClick={() => handleNavigation("/")} className="flex flex-row gap-4">
                   <MdOutlineHome className={iconStyles} size={24} />
                   <p className="cursor-pointer text-zinc-100 text-xl font-medium hover:text-primary500">Home</p>
                 </div>
