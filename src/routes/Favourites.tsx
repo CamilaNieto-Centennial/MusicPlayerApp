@@ -284,7 +284,7 @@ export default function Favourites() {
 
 
   return (
-    <main className="w-full relative h-dvh overflow-y-hidden">
+    <main className="w-full relative h-svh overflow-y-hidden">
       {/* Background Gradient */}
       <div
         className="absolute inset-0 z-0 h-[600px] sm:h-[380px]"
