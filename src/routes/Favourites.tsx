@@ -284,7 +284,7 @@ export default function Favourites() {
 
 
   return (
-    <main className="w-full relative h-full overflow-y-hidden">
+    <main className="w-full relative h-[100dvh] overflow-y-hidden">
       {/* Background Gradient */}
       <div
         className="absolute inset-0 z-0 h-[600px] sm:h-[380px]"
@@ -458,7 +458,7 @@ export default function Favourites() {
         </footer>
         {/* Mobile Footer */}
         <footer
-          className="md:hidden absolute bottom-0 left-0 z-40  items-center justify-between w-full px-4 py-3 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent"
+          className="md:hidden absolute bottom-0 left-0 z-40  items-center justify-between w-full px-4 py-3 pb-[calc(1rem+theme(spacing.safe))] sm:pb-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent"
           style={{
             backgroundImage: `linear-gradient(to right, ${averageColor}, ${darkenHexColor})`, // Apply average color here
           }}>

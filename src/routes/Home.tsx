@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full relative h-full overflow-y-auto">
+    <main className="w-full relative h-[100dvh] overflow-y-auto">
       {/* Background Gradient */}
       <div
         className="absolute inset-0 z-0 h-[500px]"
@@ -59,7 +59,7 @@ export default function Home() {
             style={{
               backgroundImage: `linear-gradient(to right, rgba(18,18,18,0.95), rgba(18,18,18,0.4)), url(${singerImage})`,
               backgroundSize: 'contain',
-              backgroundPosition: 'lg:80% right top',
+              backgroundPosition: '80% top',
               backgroundRepeat: 'no-repeat',
             }}
           />
