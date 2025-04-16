@@ -8,7 +8,8 @@ type McCarouselType<T> = {
   items: T[];
   isLoading: boolean;
   renderItem: (item: T, index: number) => React.ReactNode;
-  url: string;
+  hideUrl?: boolean;
+  url?: string;
   isColor?: boolean;
   isRounded?: boolean;
   itemsPerSlide?: number;
@@ -19,6 +20,7 @@ export const McCarousel = <T,>({
   items,
   isLoading,
   renderItem,
+  hideUrl,
   url,
   isColor,
   isRounded,
@@ -70,7 +72,8 @@ export const McCarousel = <T,>({
         else if (width >= 950) setItemsPerSlide(5);
         else if (width >= 750) setItemsPerSlide(4);
         else if (width >= 600) setItemsPerSlide(3);
-        else setItemsPerSlide(2);
+        else if (width >= 450) setItemsPerSlide(2);
+        else setItemsPerSlide(1);
       } else {
         if (width >= 1900) setItemsPerSlide(8);
         else if (width >= 1650) setItemsPerSlide(7);
@@ -78,7 +81,7 @@ export const McCarousel = <T,>({
         else if (width >= 1200) setItemsPerSlide(5);
         else if (width >= 900) setItemsPerSlide(4);
         else if (width >= 650) setItemsPerSlide(3);
-        else if (width >= 400) setItemsPerSlide(2);
+        else if (width >= 500) setItemsPerSlide(2);
         else setItemsPerSlide(1);
       }
     };
@@ -98,7 +101,8 @@ export const McCarousel = <T,>({
       if (itemsPerSlide === 5) return 'gap-6';
       if (itemsPerSlide === 4) return 'gap-6';
       if (itemsPerSlide === 3) return 'gap-4';
-      return 'gap-6';
+      if (itemsPerSlide === 2) return 'gap-2';
+      return 'gap-10';
     } else {
       if (itemsPerSlide === 9) return 'gap-2';
       if (itemsPerSlide === 8) return 'gap-4';
@@ -106,6 +110,7 @@ export const McCarousel = <T,>({
       if (itemsPerSlide === 6) return 'gap-4';
       if (itemsPerSlide === 5) return 'gap-4';
       if (itemsPerSlide === 4) return 'gap-6';
+      if (itemsPerSlide === 3) return 'gap-4';
       if (itemsPerSlide === 3) return 'gap-4';
       return 'gap-6';
     }
@@ -115,7 +120,7 @@ export const McCarousel = <T,>({
     <div className="flex flex-col gap-4">
       <div className="flex flex-row justify-between items-center">
         <h3 className="text-xl font-bold">{title}</h3>
-        <p onClick={() => handleNavigation(url)} className="font-bold hover:underline cursor-pointer">Show all</p>
+        {hideUrl ? <></> : <p onClick={() => handleNavigation(url ?? "")} className="font-bold hover:underline cursor-pointer">Show all</p>}
       </div>
       <div className="relative w-full">
         <div className="overflow-hidden">

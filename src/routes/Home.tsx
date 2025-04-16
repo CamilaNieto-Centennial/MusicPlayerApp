@@ -46,7 +46,7 @@ export default function Home() {
       <div
         className="absolute inset-0 z-0 h-[500px]"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(18,18,18,0.95), rgba(18,18,18,0.4))`,
+          backgroundImage: `linear-gradient(to right, rgba(18,18,18,0.95), rgba(18,18,18,0.6)) lg:linear-gradient(to right, rgba(18,18,18,0.95), rgba(18,18,18,0.4))`,
           backgroundSize: 'contain',
           backgroundPosition: '80% top',
           backgroundRepeat: 'no-repeat',
@@ -55,42 +55,41 @@ export default function Home() {
       <div className='relative flex flex-col gap-12 h-full'>
         <section className="relative w-full h-fit">
           <div
-            className="absolute inset-0 z-0 h-[590px]"
+            className="absolute inset-0 z-0 h-[900px] lg:h-[590px]"
             style={{
               backgroundImage: `linear-gradient(to right, rgba(18,18,18,0.95), rgba(18,18,18,0.4)), url(${singerImage})`,
               backgroundSize: 'contain',
-              backgroundPosition: '80% top',
+              backgroundPosition: 'lg:80% right top',
               backgroundRepeat: 'no-repeat',
             }}
           />
-          <div className="relative z-10 flex flex-col gap-10 w-full pt-20 pb-16 px-8">
+          <div className="relative z-10 flex flex-col gap-4 md:gap-10 w-full pt-14 pb-10  md:pt-16 md:pb-14 lg:pt-20 lg:pb-16 px-8">
             <h1 className="text-base font-semibold text-primary500">Trending New Hits</h1>
-            <div className="flex flex-col gap-8 w-full mb-2 ml-4">
-              <div className="flex flex-col gap-4">
-                <h1 className="text-6xl font-bold">Rolling in the Deep</h1>
-                <div className='flex flex-row gap-4 items-center'>
-                  <p className="text-lg font-semibold text-zinc-200">Adele</p>
-                  <p className="text-base font-medium text-zinc-500">80 Million Plays</p>
+            <div className="flex flex-col gap-5 md:gap-8 w-full mb-2 md:ml-4">
+              <div className="flex flex-col gap-2 md:gap-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Rolling in the Deep</h1>
+                <div className='flex flex-row gap-3 md:gap-4 items-center'>
+                  <p className="text-base md:text-lg font-semibold text-zinc-200">Adele</p>
+                  <p className="text-base md:text-base font-medium text-zinc-500">80 Million Plays</p>
                 </div>
               </div>
               <div className="flex flex-row gap-3">
                 <Button
                   //startContent={<MdShuffle className="w-5 h-5" />}
-                  className="w-fit bg-primary600"
-                  size="lg"
+                  className="w-fit bg-primary600 px-5 py-2 text-sm md:text-base md:px-6 md:py-4"
                   radius="full"
                   color="danger">
                   <p className="text-base font-semibold">Listen Now</p>
                 </Button>
-                <Button isIconOnly variant="bordered" aria-label="Like" size="lg" radius="full" color="default">
-                  <MdFavorite className='text-primary600 w-[1.4rem] h-[1.4rem]' />
+                <Button isIconOnly variant="bordered" aria-label="Like" radius="full" color="default" className="p-2 md:p-2">
+                  <MdFavorite className='text-primary600 w-5 h-5 md:w-[1.6rem] md:h-[1.6rem]' />
                 </Button>
               </div>
             </div>
           </div>
         </section>
         <div
-          className=" z-10 flex flex-col gap-12 px-8 pb-10"
+          className=" z-10 flex flex-col gap-11 md:gap-12 px-8 pb-10"
           style={{
             background: 'linear-gradient(to bottom, rgba(9,9,11,0.005) 0%, rgba(9,9,11,0.7) 10%, rgba(9,9,11,1) 15%)',
           }}

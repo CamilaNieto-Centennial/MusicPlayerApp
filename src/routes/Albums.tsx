@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BaseCardDataType } from '../types/spotify';
 import { fetchNewAlbumsReleases, getAccessToken } from '../api/spotify';
-import { McCardRectangle } from '../components';
+import { McCardRectangle, McCarousel } from '../components';
 import { Skeleton } from '@nextui-org/react';
 import { topAlbums } from '../constants/albums';
 
@@ -29,8 +29,8 @@ export default function Albums() {
 
   return (
     <main className="flex flex-col gap-4 px-12 py-8 xl:px-8 overflow-y-auto">
-      <h3 className="text-xl font-bold">Albums</h3>
-      <div className="relative w-full flex gap-4 flex-wrap justify-between">
+      <h3 className="hidden md:block text-xl font-bold">Albums</h3>
+      <div className="relative w-full gap-4 flex flex-wrap justify-center lg:justify-between">
         {isLoading
           ? Array.from({ length: 16 }).map((_, i) => (
             <div key={i} className="flex flex-col gap-3 w-fit shrink-0">
@@ -48,8 +48,20 @@ export default function Albums() {
           : <>
             {
               albums.map((album) => (
-                <McCardRectangle item={album} />
+                <div className='hidden md:block w-fit'>
+                  <McCardRectangle item={album} />
+                </div>
               ))}
+
+            <div className="block md:hidden">
+              <McCarousel
+                title="Albums"
+                items={albums}
+                isLoading={isLoading}
+                renderItem={(album) => <McCardRectangle item={album} />}
+                hideUrl
+              />
+            </div>
           </>
         }
       </div>

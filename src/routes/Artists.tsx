@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { McCardRounded } from '../components';
+import { McCardRectangle, McCardRounded, McCarousel } from '../components';
 import { BaseArtistType } from '../types/spotify';
 import { fetchPopularArtists, getAccessToken } from '../api/spotify';
 import { Skeleton } from '@nextui-org/react';
@@ -29,8 +29,8 @@ export default function Artists() {
 
   return (
     <main className="flex flex-col gap-4 px-12 py-8 xl:px-8 overflow-y-auto">
-      <h3 className="text-xl font-bold">Artists</h3>
-      <div className="relative w-full flex gap-[17px] flex-wrap justify-between">
+      <h3 className="hidden md:block text-xl font-bold">Artists</h3>
+      <div className="relative w-full flex gap-[17px] flex-wrap justify-center lg:justify-between">
         {isLoading
           ? Array.from({ length: 27 }).map((_, i) => (
             <div key={i} className="flex flex-col gap-3 w-fit shrink-0 items-center">
@@ -45,8 +45,21 @@ export default function Artists() {
           : <>
             {
               artists.map((artist) => (
-                <McCardRounded item={artist} />
+                <div className='hidden md:block w-fit'>
+                  <McCardRounded item={artist} />
+                </div>
               ))}
+
+            <div className="block md:hidden">
+              <McCarousel
+                title="Artists"
+                items={artists}
+                isLoading={isLoading}
+                isRounded
+                renderItem={(artist) => <McCardRounded item={artist} />}
+                hideUrl
+              />
+            </div>
           </>
         }
       </div>

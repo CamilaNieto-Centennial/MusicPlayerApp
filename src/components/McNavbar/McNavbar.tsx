@@ -15,14 +15,16 @@ export const McNavbar = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-between items-center gap-6 w-full px-8 py-4">
-        <div className="flex flex-row gap-4">
+      <div className="flex flex-row sm:justify-between items-center gap-6 w-full px-8 py-4 justify-end">
+        <div className="hidden sm:flex flex-row gap-4 w-fit justify-start">
           <p onClick={() => handleNavigation("/music")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">MUSIC</p>
           <p onClick={() => handleNavigation("/podcasts")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">PODCAST</p>
           <p onClick={() => handleNavigation("/live")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500  hover:font-semibold hover:scale-105 transition-all duration-150">LIVE</p>
         </div>
-        <McSearchbar />
-        <div className="flex flex-row items-center gap-5">
+        <div className="hidden md:block w-full max-w-[38rem]">
+          <McSearchbar />
+        </div>
+        <div className="flex flex-row items-center gap-5 w-fit min-w-[8.5rem]">
           <div
             onMouseEnter={() => setHoveredIcon("fav")}
             onMouseLeave={() => setHoveredIcon(null)}
