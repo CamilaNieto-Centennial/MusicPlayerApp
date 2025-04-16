@@ -31,32 +31,6 @@ export const fetchNewAlbumsReleases = async (accessToken: string) => {
   return data.albums.items;
 };
 
-// export const fetchPopularArtists = async (accessToken: string): Promise<BaseArtistType[]> => {
-//   const newAlbums: BaseCardDataType[] = await fetchNewAlbumsReleases(accessToken);
-
-//   const artists: BaseArtistType[] = [];
-
-//   newAlbums.forEach((album: BaseCardDataType) => {
-//     album.artists.forEach((artist: BaseArtistType) => {
-//       // Ensure the artist has an id (as required by BaseArtistType)
-//       if (artist.id && artist.name) {
-//         artists.push(artist);
-//       }
-//     });
-//   });
-
-//   // Deduplicate artists by id
-//   const uniqueArtists = Object.values(
-//     artists.reduce((acc: Record<string, BaseArtistType>, artist: BaseArtistType) => {
-//       acc[artist.id] = artist;
-//       return acc;
-//     }, {})
-//   );
-//   console.log('uniqueArtists', uniqueArtists);
-
-//   return uniqueArtists;
-// };
-
 
 export const fetchPopularArtists = async (accessToken: string): Promise<BaseArtistType[]> => {
   const newAlbums: BaseCardDataType[] = await fetchNewAlbumsReleases(accessToken);

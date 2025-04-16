@@ -7,6 +7,8 @@ import { genres } from '../constants/genres';
 import { Button } from '@nextui-org/react';
 import { MdFavorite } from 'react-icons/md';
 import singerImage from '../assets/adele.png'
+import { topAlbums } from '../constants/albums';
+import { trendingArtists } from '../constants/artists';
 
 export default function Home() {
   const [newAlbums, setNewAlbums] = useState<BaseCardDataType[]>([]);
@@ -17,18 +19,19 @@ export default function Home() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const token = await getAccessToken();
-        const [
-          newAlbumsData,
-          popularArtistsData,
-        ] = await Promise.all([
-          fetchNewAlbumsReleases(token),
-          fetchPopularArtists(token)
-        ]);
-        setNewAlbums(newAlbumsData);
-        setPopularArtists(popularArtistsData);
+        setNewAlbums(topAlbums);
+        setPopularArtists(trendingArtists);
+        // const token = await getAccessToken();
+        // const [newAlbumsData, popularArtistsData] = await Promise.all([
+        //   fetchNewAlbumsReleases(token),
+        //   fetchPopularArtists(token)
+        // ]);
+        // setNewAlbums(newAlbumsData);
+        // setPopularArtists(popularArtistsData);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setNewAlbums(topAlbums);
+        setPopularArtists(trendingArtists);
       } finally {
         setIsLoading(false);
       }
@@ -104,6 +107,7 @@ export default function Home() {
             items={popularArtists}
             isLoading={isLoading}
             itemsPerSlide={8}
+            isRounded
             renderItem={(artist) => <McCardRounded item={artist} />}
             url="/artists"
           />
@@ -111,8 +115,8 @@ export default function Home() {
             title="Genres"
             items={genres}
             isLoading={isLoading}
-            itemsPerSlide={7}
-            isSmall
+            itemsPerSlide={8}
+            isColor
             renderItem={(genre) => <McCardColor item={genre} />}
             url="/genres"
           />

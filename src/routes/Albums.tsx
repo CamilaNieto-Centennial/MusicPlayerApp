@@ -3,6 +3,7 @@ import { BaseCardDataType } from '../types/spotify';
 import { fetchNewAlbumsReleases, getAccessToken } from '../api/spotify';
 import { McCardRectangle } from '../components';
 import { Skeleton } from '@nextui-org/react';
+import { topAlbums } from '../constants/albums';
 
 export default function Albums() {
   const [albums, setAlbums] = useState<BaseCardDataType[]>([]);
@@ -11,11 +12,13 @@ export default function Albums() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const token = await getAccessToken();
-        const albumsData = await fetchNewAlbumsReleases(token);
-        setAlbums(albumsData);
+        setAlbums(topAlbums);
+        // const token = await getAccessToken();
+        // const albumsData = await fetchNewAlbumsReleases(token);
+        // setAlbums(albumsData);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setAlbums(topAlbums);
       } finally {
         setIsLoading(false);
       }
@@ -25,9 +28,9 @@ export default function Albums() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-4 p-8 overflow-y-auto">
+    <main className="flex flex-col gap-4 px-12 py-8 xl:px-8 overflow-y-auto">
       <h3 className="text-xl font-bold">Albums</h3>
-      <div className="relative w-full flex gap-4 flex-wrap">
+      <div className="relative w-full flex gap-4 flex-wrap justify-between">
         {isLoading
           ? Array.from({ length: 16 }).map((_, i) => (
             <div key={i} className="flex flex-col gap-3 w-fit shrink-0">
