@@ -131,7 +131,7 @@ export const McNavbar = () => {
                 </div>
               </div>
               <hr />
-              <div onClick={() => handleNavigation("/")} className="flex flex-row gap-4">
+              <div onClick={() => handleNavigation("/register")} className="flex flex-row gap-4">
                 <MdLogout className={iconStyles} size={24} />
                 <p className="cursor-pointer text-zinc-100 text-xl font-medium hover:text-danger800">Logout</p>
               </div>

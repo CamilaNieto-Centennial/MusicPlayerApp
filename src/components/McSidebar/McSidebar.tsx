@@ -208,8 +208,8 @@ export const McSidebar = ({ className }: McSidebarType) => {
           radius="sm"
           variant="light"
           startContent={<MdLogout className={iconStyles} size={24} />}
-          className={`hover:!bg-danger800 justify-start min-w-fit px-2`}
-          onPress={() => handleNavigation("/")}
+          className={`hover:!bg-danger800 justify-start min-w-fit w-full px-2`}
+          onPress={() => handleNavigation("/register")}
         >
           {isOpen && (
             <p className="text-zinc-100">Logout</p>
