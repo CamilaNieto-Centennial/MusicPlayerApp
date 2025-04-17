@@ -1,6 +1,6 @@
 export default function Live() {
   return (
-    <main className="flex flex-col gap-4 p-8 overflow-y-auto">
+    <main className="flex flex-col gap-4 h-[100dvh] p-8 overflow-y-auto">
       Live
     </main>
   )

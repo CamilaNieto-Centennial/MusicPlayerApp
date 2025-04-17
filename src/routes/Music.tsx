@@ -37,7 +37,7 @@ export default function Music() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-12 p-8 overflow-y-auto">
+    <main className="flex flex-col gap-12 h-[100dvh] p-8 overflow-y-auto">
       <McCarousel
         title="Popular Playlists"
         items={newAlbums}

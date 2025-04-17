@@ -3,7 +3,7 @@ import { McCardColor, McCarousel } from '../components'
 
 export default function Genres() {
   return (
-    <main className="flex flex-col gap-4 px-12 py-8 xl:px-8 overflow-y-auto">
+    <main className="flex flex-col gap-4 h-[100dvh] px-12 py-8 xl:px-8 overflow-y-auto">
       <h3 className="hidden md:block text-xl font-bold">Genres</h3>
       <div className="hidden md:flex relative w-full gap-4 flex-wrap justify-center lg:justify-between">
         {

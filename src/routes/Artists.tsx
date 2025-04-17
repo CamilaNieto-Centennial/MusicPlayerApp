@@ -28,7 +28,7 @@ export default function Artists() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-4 px-12 py-8 xl:px-8 overflow-y-auto">
+    <main className="flex flex-col gap-4 h-[100dvh] px-12 py-8 xl:px-8 overflow-y-auto">
       <h3 className="hidden md:block text-xl font-bold">Artists</h3>
       <div className="relative w-full flex gap-[17px] flex-wrap justify-center lg:justify-between">
         {isLoading
