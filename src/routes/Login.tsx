@@ -20,7 +20,6 @@ export default function Login() {
         />
         <h1 className="text-3xl font-bold text-center">Login</h1>
 
-        {/* Email Log In */}
         <form className="space-y-4">
           <input
             type="email"
@@ -46,14 +45,12 @@ export default function Login() {
           </button>
         </form>
 
-        {/* Divider */}
         <div className="flex items-center gap-4">
           <hr className="flex-grow border-zinc-700" />
           <span className="text-zinc-400 text-sm">or</span>
           <hr className="flex-grow border-zinc-700" />
         </div>
 
-        {/* Social Buttons */}
         <div className="flex flex-col gap-4 w-full">
           <button className="flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white py-3 px-4 rounded-md">
             <FaGoogle className="w-5 h-5" />
@@ -69,9 +66,6 @@ export default function Login() {
           </button>
         </div>
 
-
-
-        {/* Don't have account */}
         <p className="text-sm text-zinc-400 text-center">
           Don't have an account?{" "}
           <Link href="/register">

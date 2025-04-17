@@ -20,7 +20,6 @@ export default function Register() {
         />
         <h1 className="text-3xl font-bold text-center">Create an Account</h1>
 
-        {/* Email Sign Up */}
         <form className="space-y-4">
           <input
             type="email"
@@ -41,14 +40,12 @@ export default function Register() {
           </button>
         </form>
 
-        {/* Divider */}
         <div className="flex items-center gap-4">
           <hr className="flex-grow border-zinc-700" />
           <span className="text-zinc-400 text-sm">or</span>
           <hr className="flex-grow border-zinc-700" />
         </div>
 
-        {/* Social Buttons */}
         <div className="flex flex-col gap-4 w-full">
           <button className="flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white py-3 px-4 rounded-md">
             <FaGoogle className="w-5 h-5" />
@@ -64,9 +61,6 @@ export default function Register() {
           </button>
         </div>
 
-
-
-        {/* Already have account */}
         <p className="text-sm text-zinc-400 text-center">
           Already have an account?{" "}
           <Link href="/login">
@@ -74,7 +68,6 @@ export default function Register() {
           </Link>
         </p>
 
-        {/* Terms and conditions */}
         <p className="text-xs text-zinc-500 text-center max-w-sm mx-auto">
           By signing up, you agree to our{" "}
           <Link href="/terms">

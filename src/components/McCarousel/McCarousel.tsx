@@ -29,7 +29,6 @@ export const McCarousel = <T,>({
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [fade, setFade] = useState(false);
-  // const wasItemsPerSlideProvided = typeof propItemsPerSlide === 'number';
   const [itemsPerSlide, setItemsPerSlide] = useState(propItemsPerSlide ?? ((isRounded || isColor) ? 8 : 7));
   const maxSlide = Math.max(items.length - itemsPerSlide, 0);
 
@@ -86,7 +85,7 @@ export const McCarousel = <T,>({
       }
     };
 
-    updateItemsPerSlide(); // call on mount
+    updateItemsPerSlide();
 
     window.addEventListener('resize', updateItemsPerSlide);
     return () => window.removeEventListener('resize', updateItemsPerSlide);

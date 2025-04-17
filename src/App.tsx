@@ -31,7 +31,6 @@ function App() {
           </Route>
           <Route element={<Register />} path="/register" />
           <Route element={<Login />} path="/login" />
-          {/* <Route element={<Error404 />} path="*" /> */}
         </Routes>
       </BrowserRouter>
     </>

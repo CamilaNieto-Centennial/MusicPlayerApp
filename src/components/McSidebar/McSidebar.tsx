@@ -45,18 +45,16 @@ export const McSidebar = ({ className }: McSidebarType) => {
   useEffect(() => {
     if (isOpen) {
       containerControls.start("open")
-      setIsTemporarilyFixed(true); // Always fixed while open
+      setIsTemporarilyFixed(true);
     } else {
       containerControls.start("close")
-      // Delay unfixing sidebar until after the animation finishes (e.g., 500ms)
       setTimeout(() => {
         setIsTemporarilyFixed(false);
-      }, 500); // Match this to your animation duration
+      }, 500);
     }
   }, [containerControls, isOpen]);
 
   const handleNavigation = (route: string) => {
-    // setIsOpen(false);
     navigate(route);
   };
 

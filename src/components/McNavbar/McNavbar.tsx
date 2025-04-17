@@ -35,19 +35,16 @@ export const McNavbar = () => {
           src={whiteLogo}
         />
 
-        {/* Navbar menu */}
         <div className="hidden sm:flex flex-row gap-4 w-fit justify-start">
           <p onClick={() => handleNavigation("/music")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">MUSIC</p>
           <p onClick={() => handleNavigation("/podcasts")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500 hover:font-semibold hover:scale-105 transition-all duration-150">PODCAST</p>
           <p onClick={() => handleNavigation("/live")} className="cursor-pointer text-zinc-100 font-medium hover:text-primary500  hover:font-semibold hover:scale-105 transition-all duration-150">LIVE</p>
         </div>
 
-        {/* Searchbar visible on larger screens */}
         <div className="hidden md:block w-full max-w-[38rem]">
           <McSearchbar />
         </div>
 
-        {/* Profile and notifications */}
         <div className="flex flex-row items-center gap-5 w-fit min-w-[5rem] sm:min-w-[8.5rem]">
           <div
             onMouseEnter={() => setHoveredIcon("fav")}
@@ -82,7 +79,6 @@ export const McNavbar = () => {
         {/* Mobile menu - Conditional rendering */}
         {isMobileMenuOpen && (
           <div className="sm:hidden fixed top-0 left-0 w-full h-screen bg-zinc-900 bg-opacity-100 flex flex-col pt-16 px-8 py-6 gap-9 z-50 transition-all duration-300 transform opacity-100">
-            {/* Close button */}
             <div className="absolute top-4 right-4">
               <MdClose
                 className="text-zinc-100 w-8 h-8 cursor-pointer"
@@ -90,7 +86,6 @@ export const McNavbar = () => {
               />
             </div>
 
-            {/* Menu items */}
             <McSearchbar className="w-fit" isSmall isShow={true} />
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-6">

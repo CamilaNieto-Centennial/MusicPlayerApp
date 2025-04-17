@@ -9,12 +9,13 @@ import { MdFavorite } from 'react-icons/md';
 import singerImage from '../assets/adele.png'
 import { topAlbums } from '../constants/albums';
 import { trendingArtists } from '../constants/artists';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
   const [newAlbums, setNewAlbums] = useState<BaseCardDataType[]>([]);
   const [popularArtists, setPopularArtists] = useState<BaseArtistType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  //const itemsPerSlide = 7; // Number of items per slide (carousel)
 
   useEffect(() => {
     const loadData = async () => {
@@ -39,6 +40,10 @@ export default function Home() {
 
     loadData()
   }, []);
+
+  const handleNavigation = (route: string) => {
+    navigate(route);
+  };
 
   return (
     <main className="w-full relative h-[100dvh] overflow-y-auto">
@@ -75,13 +80,13 @@ export default function Home() {
               </div>
               <div className="flex flex-row gap-3">
                 <Button
-                  //startContent={<MdShuffle className="w-5 h-5" />}
+                  onClick={() => handleNavigation("/favourites")}
                   className="w-fit bg-primary600 px-5 py-2 text-xs sm:text-base sm:px-6 sm:py-4"
                   radius="full"
                   color="danger">
                   <p className="text-base font-semibold">Listen Now</p>
                 </Button>
-                <Button isIconOnly variant="bordered" aria-label="Like" radius="full" color="default" className="p-2 md:p-2">
+                <Button onClick={() => handleNavigation("/favourites")} isIconOnly variant="bordered" aria-label="Like" radius="full" color="default" className="p-2 md:p-2">
                   <MdFavorite className='text-primary600 w-5 h-5 md:w-[1.6rem] md:h-[1.6rem]' />
                 </Button>
               </div>
