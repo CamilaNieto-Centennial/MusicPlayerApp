@@ -42,7 +42,7 @@ export const McNavbar = () => {
         </div>
 
         <div className="hidden md:block w-full max-w-[38rem]">
-          <McSearchbar />
+          <McSearchbar isShow />
         </div>
 
         <div className="flex flex-row items-center gap-5 w-fit min-w-[5rem] sm:min-w-[8.5rem]">
