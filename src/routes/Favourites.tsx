@@ -284,7 +284,7 @@ export default function Favourites() {
 
 
   return (
-    <main className="w-full relative h-svh overflow-y-hidden">
+    <main className="w-full relative h-[100dvh] sm:h-full overflow-y-hidden">
       {/* Background Gradient */}
       <div
         className="absolute inset-0 z-0 h-[600px] sm:h-[380px]"
@@ -296,7 +296,7 @@ export default function Favourites() {
         }}
       />
       <div className="relative h-full">
-        <div className="relative w-full overflow-y-auto h-full md:h-[90.7%] lg:h-[88.5%] pb-[30px]">
+        <div className="relative w-full overflow-y-auto h-full md:h-[90.7%] lg:h-[88.5%] pb-[80px]">
           <div className="flex flex-col items-center sm:flex-row gap-6 pt-8 px-8 md:px-8 sm:items-end">
             <img
               src="https://upload.wikimedia.org/wikipedia/pt/0/07/Stay_-_The_Kid_Laroi_e_Justin_Bieber.png"
@@ -458,7 +458,7 @@ export default function Favourites() {
         </footer>
         {/* Mobile Footer */}
         <footer
-          className="md:hidden absolute bottom-0 left-0 z-40  items-center justify-between w-full px-4 py-3 pb-[calc(1rem+theme(spacing.safe))] sm:pb-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent"
+          className="md:hidden absolute bottom-0 left-0 z-40  items-center justify-between w-full px-4 py-3 pb-4 sm:pb-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 to-transparent"
           style={{
             backgroundImage: `linear-gradient(to right, ${averageColor}, ${darkenHexColor})`, // Apply average color here
           }}>
