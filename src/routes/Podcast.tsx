@@ -15,7 +15,6 @@ export default function Podcast() {
         <McCarousel
           title="Podcasts"
           items={podcasts}
-          isLoading={false}
           renderItem={(podcast) => <McCardRectangle item={podcast} />}
           hideUrl
         />

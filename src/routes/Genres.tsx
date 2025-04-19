@@ -15,7 +15,6 @@ export default function Genres() {
         <McCarousel
           title="Genres"
           items={genres}
-          isLoading={false}
           itemsPerSlide={8}
           isColor
           renderItem={(genre) => <McCardColor item={genre} />}

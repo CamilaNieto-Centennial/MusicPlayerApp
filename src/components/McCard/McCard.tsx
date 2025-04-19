@@ -21,10 +21,7 @@ export const McCardRectangle = <T extends BaseCardDataType>({ item, className }:
           className="w-[240px] h-[140px] object-cover cursor-pointer transition-all duration-500 ease-in-out group-hover:scale-110"
           src={item.images[0].url}
         />
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 opacity-0 cursor-pointer group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
-
-        {/* Play Icon */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 cursor-pointer group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           <div className="bg-white p-3 rounded-full shadow-md transform scale-90 group-hover:scale-100 transition-transform duration-300 ease-in-out">
             <MdPlayArrow className="text-black w-7 h-7" />
@@ -57,10 +54,7 @@ export const McCardRounded = <T extends BaseArtistType>({ item, className }: McC
           className="w-[180px] h-[180px] object-cover cursor-pointer transition-all duration-500 ease-in-out group-hover:scale-110"
           src={item.images?.[0]?.url || '/placeholder.png'}
         />
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40 opacity-0 cursor-pointer group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
-
-        {/* Play Icon */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 cursor-pointer group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
           <div className="bg-white p-3 rounded-full shadow-md transform scale-90 group-hover:scale-100 transition-transform duration-300 ease-in-out">
             <MdPlayArrow className="text-black w-7 h-7" />

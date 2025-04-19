@@ -27,7 +27,7 @@ export const fetchNewAlbumsReleases = async (accessToken: string) => {
   });
 
   const data = await response.json();
-  console.log("New Releases:", data); // 👈 inspect the actual structure
+  console.log("New Releases:", data);
   return data.albums.items;
 };
 
@@ -43,7 +43,7 @@ export const fetchPopularArtists = async (accessToken: string): Promise<BaseArti
   });
 
   // Spotify allows up to 50 artist IDs in a batch
-  const artistIdChunks = Array.from(artistIds).slice(0, 50); // You can paginate if needed
+  const artistIdChunks = Array.from(artistIds).slice(0, 50);
   const response = await fetch(`https://api.spotify.com/v1/artists?ids=${artistIdChunks.join(',')}`, {
     headers: {
       Authorization: `Bearer ${accessToken}`

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 type McCarouselType<T> = {
   title: string;
   items: T[];
-  isLoading: boolean;
+  isLoading?: boolean;
   renderItem: (item: T, index: number) => React.ReactNode;
   hideUrl?: boolean;
   url?: string;
@@ -18,7 +18,7 @@ type McCarouselType<T> = {
 export const McCarousel = <T,>({
   title,
   items,
-  isLoading,
+  isLoading = false,
   renderItem,
   hideUrl,
   url,
@@ -59,7 +59,6 @@ export const McCarousel = <T,>({
 
   // 👇 Responsive breakpoints
   useEffect(() => {
-    // if (wasItemsPerSlideProvided) return;
 
     const updateItemsPerSlide = () => {
       const width = window.innerWidth;

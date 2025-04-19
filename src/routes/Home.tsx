@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react'
-// import { getAccessToken, fetchNewAlbumsReleases, fetchPopularArtists } from '../api/spotify'
-import { BaseArtistType, BaseCardDataType } from '../types/spotify'
 import { McCardColor, McCardRectangle, McCardRounded, McCarousel } from '../components'
 import { podcasts } from '../constants/podcasts';
 import { genres } from '../constants/genres';
@@ -13,33 +10,6 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const navigate = useNavigate();
-  const [newAlbums, setNewAlbums] = useState<BaseCardDataType[]>([]);
-  const [popularArtists, setPopularArtists] = useState<BaseArtistType[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        setNewAlbums(topAlbums);
-        setPopularArtists(trendingArtists);
-        // const token = await getAccessToken();
-        // const [newAlbumsData, popularArtistsData] = await Promise.all([
-        //   fetchNewAlbumsReleases(token),
-        //   fetchPopularArtists(token)
-        // ]);
-        // setNewAlbums(newAlbumsData);
-        // setPopularArtists(popularArtistsData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setNewAlbums(topAlbums);
-        setPopularArtists(trendingArtists);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadData()
-  }, []);
 
   const handleNavigation = (route: string) => {
     navigate(route);
@@ -101,15 +71,13 @@ export default function Home() {
         >
           <McCarousel
             title="Recommended For You"
-            items={newAlbums.slice(10, 20)}
-            isLoading={isLoading}
+            items={topAlbums.slice(10, 20)}
             renderItem={(album) => <McCardRectangle item={album} />}
             url="/albums"
           />
           <McCarousel
             title="Popular Artists"
-            items={popularArtists}
-            isLoading={isLoading}
+            items={trendingArtists}
             itemsPerSlide={8}
             isRounded
             renderItem={(artist) => <McCardRounded item={artist} />}
@@ -118,7 +86,6 @@ export default function Home() {
           <McCarousel
             title="Genres"
             items={genres}
-            isLoading={isLoading}
             itemsPerSlide={8}
             isColor
             renderItem={(genre) => <McCardColor item={genre} />}
@@ -126,22 +93,19 @@ export default function Home() {
           />
           <McCarousel
             title="Popular Playlists"
-            items={newAlbums}
-            isLoading={isLoading}
+            items={topAlbums}
             renderItem={(album) => <McCardRectangle item={album} />}
             url="/albums"
           />
           <McCarousel
             title="New Releases"
-            items={newAlbums.slice(10, 20)}
-            isLoading={isLoading}
+            items={topAlbums.slice(10, 20)}
             renderItem={(album) => <McCardRectangle item={album} />}
             url="/albums"
           />
           <McCarousel
             title="Popular Podcasts"
             items={podcasts}
-            isLoading={isLoading}
             renderItem={(podcast) => <McCardRectangle item={podcast} />}
             url="/podcasts"
           />
